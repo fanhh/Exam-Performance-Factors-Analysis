@@ -1,4 +1,4 @@
-# examd ata visualization
+# examd data visualization
 A basic data analysis and machine learning project that aims to explore factors that may impact students' academic performance and build a linear regression model to examine the correlation between the independent variables and overall exam performance. The project involves using various scientific computing techniques, such as data manipulation using pandas, data visualization through plotting, and machine learning algorithms through scikit-learn.
 
 #### Part I: running bootstrap to estimate the true parameters of the exam score based on gender and exam category via data visualization, this will allow me to obtain a more reliable estimate of the means, with a 99% confidence interval approximation. 
