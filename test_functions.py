@@ -17,10 +17,10 @@ def test_quantify_binary():
 def test_education_qunaity():
     assert callable(data_proc.education_qunaity)
     assert isinstance(data_proc.education_qunaity('master'), int)                          
-    assert data_proc.education_qunaity('master') == 0
-    assert data_proc.education_qunaity('some college') == 1
-    assert data_proc.education_qunaity("bachelor's degree") == 2
-    assert data_proc.education_qunaity("master's degree") == 3
+    assert data_proc.education_qunaity('master') == 0.4
+    assert data_proc.education_qunaity('some college') == 0.6
+    assert data_proc.education_qunaity("bachelor's degree") == 0.8
+    assert data_proc.education_qunaity("master's degree") == 1
                                                                                                                
 def test_su():
     assert callable(data_proc.su)
