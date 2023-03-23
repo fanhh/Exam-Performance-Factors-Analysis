@@ -1,5 +1,5 @@
-from data_module import basic_model
-from data_module import data_proc
+import basic_model
+import data_proc
 from sklearn.linear_model import LinearRegression
 import pandas as pd
 import numpy as np
