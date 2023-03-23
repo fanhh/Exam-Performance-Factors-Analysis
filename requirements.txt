@@ -1,0 +1,9 @@
+# this is a comment line. any line beginning with # is a comment line
+# this is an example requirements.txt file
+# in this file you should list (without the # beginning a line!)
+# any libraries from pypi that you need to ppip install
+# list one library per line 
+pip install -U scikit-learn
+pip install pandas
+pip install numpy
+pip install -U matplotlib
