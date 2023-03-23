@@ -6,12 +6,23 @@ from sklearn.metrics import mean_squared_error, r2_score
 def my_model():
     """
     Initalize the linear model
+    ---
+    Return an object
     """
     return LinearRegression()
 
 def datasplit(x, y, train=0.8, test=0.2):
     """
     Split the data into subsets for training
+    ---
+    Parameters:
+    x = a dataframe
+    y = a dataframe
+    trains = with defalut value of 0.8
+    test = with defalut value of 0.2
+    ---
+    Return four variables that's assocaied with \
+    training data
     """
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=test, train_size=train)
     return x_train, x_test, y_train, y_test
@@ -24,6 +35,7 @@ def score_predict_train(model, x, y):
     Code version: 2.0
     Availability: (https://towardsdatascience.com
     /how-to-build-a-regression-model-in-python-9a10685c7f09)
+    Apply the trained linear model on the sub train data set
     """
     predict_train = model.predict(x)
     print('Intercept: ' + str(model.intercept_))
@@ -40,6 +52,7 @@ def score_predict_test(model, x, y):
     Code version: 2.0
     Availability: (https://towardsdatascience.com
     /how-to-build-a-regression-model-in-python-9a10685c7f09)
+    Apply the trained linear model on the sub train data set
     """
     predict_test = model.predict(x)
     print('Intercept: ' + str(model.intercept_))
