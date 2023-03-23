@@ -3,28 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def bootstrap(db, gender, label):
-    """
-    Bootstrap the data to estimate \
-    The true popluation parameters.
-    """
-    average_exam = np.array([])
-    new_sample = db[db.get('gender') == gender]
-    for i in range(1000):
-        new_sample = new_sample.sample(new_sample.shape[0], 
-                                       replace=True)
-        new_sample_mean = new_sample.get(label).mean()
-        average_exam = np.append(average_exam, 
-                                 new_sample_mean)
-    lower_bound = np.percentile(average_exam, 0.5)
-    upper_bound = np.percentile(average_exam, 99.5)
-    
-    pd.DataFrame().assign(score = average_exam).plot(
-        kind='hist', density=True, 
-        ec='w', title=(f'{gender} average {label}'),figsize=(5,5))
-    plt.plot([lower_bound, upper_bound], [0, 0], color='gold',
-             linewidth=10, label='99% confidence interval')
-
 def parents_education_score(db):
     """
     Plot the performance of each group of studetns, \ 
