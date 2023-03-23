@@ -14,12 +14,12 @@ def quantify_binary(row):
 def education_qunaity(degree):
     """Quantify the string data into numbers"""
     if degree == "master's degree":
-        return 3
-    elif degree == "bachelor's degree":
-        return 2
-    elif degree in ["some college", "associate's degree"]:
         return 1
-    return 0
+    elif degree == "bachelor's degree":
+        return 0.8
+    elif degree in ["some college", "associate's degree"]:
+        return 0.6
+    return 0.4
 
 def quantify_df(db):
     """Create new columns in the dataframe for the linear models"""
