@@ -72,7 +72,12 @@ def test_prep(db):
 
 def predict_model(train, predict, test):
     """
-    #https://towardsdatascience.com/how-to-build-a-regression-model-in-python-9a10685c7f09
+    Title: How to Build a Regression Model in Python
+    Author: Chanin Nantasenamat
+    Date: 2020
+    Code version: 2.0
+    Availability: (https://towardsdatascience.com
+    /how-to-build-a-regression-model-in-python-9a10685c7f09)
     Plot a scatter plot the predict data and experimetn data. \
     And with a best fit line
     """
@@ -87,7 +92,12 @@ def predict_model(train, predict, test):
 
 def actual(predict, test):
     """
-    #https://towardsdatascience.com/how-to-build-a-regression-model-in-python-9a10685c7f09
+    Title: How to Build a Regression Model in Python
+    Author: Chanin Nantasenamat
+    Date: 2020
+    Code version: 2.0
+    Availability: (https://towardsdatascience.com
+    /how-to-build-a-regression-model-in-python-9a10685c7f09)
     Plot a scatter plot the experiment data. \
     And with a best fit line
     """
