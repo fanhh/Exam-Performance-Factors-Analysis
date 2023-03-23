@@ -18,8 +18,12 @@ def datasplit(x, y, train=0.8, test=0.2):
 
 def score_predict_train(model, x, y):
     """
-    #https://towardsdatascience.com/how-to-build-a-regression-model-in-python-9a10685c7f09
-    Apply the trained linear model on the sub train data set
+    Title: How to Build a Regression Model in Python
+    Author: Chanin Nantasenamat
+    Date: 2020
+    Code version: 2.0
+    Availability: (https://towardsdatascience.com
+    /how-to-build-a-regression-model-in-python-9a10685c7f09)
     """
     predict_train = model.predict(x)
     print('Intercept: ' + str(model.intercept_))
@@ -30,8 +34,12 @@ def score_predict_train(model, x, y):
           
 def score_predict_test(model, x, y):
     """
-    #https://towardsdatascience.com/how-to-build-a-regression-model-in-python-9a10685c7f09
-    Apply the trained linear model on the sub train data set
+    Title: How to Build a Regression Model in Python
+    Author: Chanin Nantasenamat
+    Date: 2020
+    Code version: 2.0
+    Availability: (https://towardsdatascience.com
+    /how-to-build-a-regression-model-in-python-9a10685c7f09)
     """
     predict_test = model.predict(x)
     print('Intercept: ' + str(model.intercept_))
