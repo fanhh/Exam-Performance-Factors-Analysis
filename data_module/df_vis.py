@@ -8,12 +8,18 @@ def parents_education_score(db):
     Plot the performance of each group of studetns, \ 
     with paretns from different education backgroud.
     In ascending order.
+    ---
+    Parameter:
+    db = a dataframe
     """
+    # Drop the columns
     new_sample = db.drop(columns=['gender','race/ethnicity', 
                                   'lunch', 'test preparation course'])
+    # Groupby by the columns and sort by the these columns
     score_mean = new_sample.groupby(
         'parental level of education').mean().sort_values(
                                    ['math score', 'reading score', 'writing score'])
+    # plot
     score_mean.plot(kind='bar', figsize=(3,3), 
                     ec='w', title=('exam score with parents' +
                                    'from different educational backgroubd'))
@@ -23,14 +29,20 @@ def overall_lunch(db):
     Plot a bar chart of overall perfromance \
     of exam score with students that get free \
     lunch vs no free lunch.
+    ---
+    Parameter:
+    db = a DataFrame
     """
+    # Drop these columns
     new_sample = db.drop(columns=['gender','race/ethnicity', 
                                   'parental level of education', 
                                   'test preparation course'])
+    # Groupby lunch columns and sort by the score columns
     score_mean = new_sample.groupby(
         'lunch').mean().sort_values(['math score', 
                                      'reading score', 
                                      'writing score'])
+    # Plot
     score_mean.plot(kind='bar', figsize=(3,3),
                     ec='w', title=('free/reduced lunch exam score '
                                    + 'VS Standard lunch exam score'))
@@ -39,12 +51,18 @@ def test_prep(db):
     """
     Plot a bar chart of all the exam performance \
     among students with exam prep or not.
+    ---
+    Parameter:
+    db = a Dataframe
     """
+    # Drop these columns
     new_sample = db.drop(columns=['gender','race/ethnicity', 
                                   'parental level of education',
                                   'lunch'])
+    # Groupby test preparation course columns and sort by the score columns
     score_mean = new_sample.groupby('test preparation course').mean().sort_values(['math score', 
-                                                            'reading score', 'writing score'])
+                                                                     'reading score', 'writing score'])
+    # Plot
     score_mean.plot(kind='bar', figsize=(3,3), 
                     ec='w', title='Test prep vs No test prep exam score')
 
