@@ -56,11 +56,20 @@ def quantify_df(db):
     # quanity the parental level of education, lunch, test preparation course columns
     # Replace all the old columns with the quanify ones
     return db.assign(overall_score = db.apply(average_score, axis=1), 
-                   parental_level_of_education = db.get('parental level of education').apply(education_qunaity),
+                   master = db.get('parental level of education').apply(lambda x: 1 if x == "master's degree" else 0),
+                   bachelor = db.get('parental level of education').apply(lambda x: 1 if x == "bachelor's degree" else 0),
+                   some_college = db.get('parental level of education').apply(lambda x: 1 if x == "some college" else 0),
+                   assoc_degr = db.get('parental level of education').apply(lambda x: 1 if x == "associate's degree" else 0),
+                   high_sch = db.get('parental level of education').apply(lambda x: 1 if x == "high school" else 0),
+                   some_high = db.get('parental level of education').apply(lambda x: 1 if x == "some high school" else 0),
+                   gender = db.get('gender').apply(lambda x:1 if x == "female" else 0),
+                   racea = db.get('race/ethnicity').apply(lambda x:1 if x == "group A" else 0),
+                   raceb = db.get('race/ethnicity').apply(lambda x:1 if x == "group B" else 0),
+                   racec = db.get('race/ethnicity').apply(lambda x:1 if x == "group C" else 0),
+                   raced = db.get('race/ethnicity').apply(lambda x:1 if x == "group D" else 0),
                    school_lunch = db.get('lunch').apply(quantify_binary),
                    exam_prep = db.get('test preparation course').apply(quantify_binary)).drop(
                    columns=['parental level of education','lunch', 'test preparation course'])
-
 def su(numbers):
     """
     Convert number into standard units.
